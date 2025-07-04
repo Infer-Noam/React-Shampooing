@@ -1,1 +1,1 @@
-A repository containing varius react mini-projects for my shampooing 🧼
+A repository containing various react mini-projects for my shampooing 🧼
