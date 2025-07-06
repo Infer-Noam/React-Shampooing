@@ -1,8 +1,15 @@
-// const taskItem = {
-//     width: '100%',
-//     height: 500,
-//     border: 1,
-//     padding: 
-// };
+import type { SxProps } from "@mui/material";
 
-// export
+const typography: SxProps = {
+  display: "flex",
+  alignItems: "center",
+};
+
+const paper: SxProps = {
+  p: 1,
+  borderRadius: "16px",
+  display: "flex",
+  flexDirection: "row",
+};
+
+export default { typography, paper };

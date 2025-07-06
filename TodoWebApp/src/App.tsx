@@ -1,14 +1,12 @@
 import { useState } from "react";
-import "./App.css";
 import TaskGrid from "./components/TaskGrid/TaskGrid";
-import Box from "@mui/material/Box";
-import Fab from "@mui/material/Fab";
-import { ThemeProvider } from "@mui/material/styles";
+import { Fab, Box } from "@mui/material";
 import taskArrayData from "./data/TaskArrayData";
 import AddIcon from "@mui/icons-material/Add";
 import AddTaskDialog from "./components/Dialog/AddTaskDialog";
 import TaskMenu from "./components/TaskMenu/TaskMenu";
 import type { Task } from "./components/TaskItem/TaskType";
+import Styles from "./App.style";
 
 function App() {
   const [tasks, setTasks] = useState(taskArrayData);
@@ -17,22 +15,8 @@ function App() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   return (
-    <Box
-      sx={{
-        position: "relative",
-        display: "flex",
-        height: "100vh",
-        width: "100vw",
-      }}
-    >
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          flexGrow: 1,
-          justifyContent: "center",
-        }}
-      >
+    <Box sx={Styles.appContainer}>
+      <Box sx={Styles.gridContainer}>
         <TaskGrid
           tasks={tasks}
           toggleTaskCompletion={(t) =>
@@ -51,12 +35,7 @@ function App() {
         />
       </Box>
       <Fab
-        sx={{
-          position: "absolute",
-          bottom: 16,
-          right: 16,
-          zIndex: 1,
-        }}
+        sx={Styles.fab}
         color="primary"
         aria-label="add"
         onClick={() => {

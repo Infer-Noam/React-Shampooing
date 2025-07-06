@@ -5,6 +5,7 @@ import type { Task } from "../TaskItem/TaskType";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
 import Button from "@mui/material/Button";
+import Styles from "./AddTaskDialog.style";
 
 type Props = {
   isOpen: boolean;
@@ -12,7 +13,7 @@ type Props = {
   createTask: (t: Task) => void;
 };
 
-function CreateTaskDialog({ isOpen, closeDialog, createTask }: Props) {
+function AddTaskDialog({ isOpen, closeDialog, createTask }: Props) {
   const [text, setText] = useState("");
 
   const createNewTask = () => {
@@ -27,22 +28,16 @@ function CreateTaskDialog({ isOpen, closeDialog, createTask }: Props) {
   return (
     <Dialog open={isOpen} onClose={closeDialog}>
       <DialogTitle>Add a new task!</DialogTitle>
-      <DialogContent
-        sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-      >
+      <DialogContent sx={Styles.dialogContent}>
         <TextField
-          sx={{ mb: 2, mt: 1 }}
+          sx={Styles.textField}
           value={text}
           onChange={(e) => setText(e.target.value)}
           id="outlined-basic"
           label="Outlined"
           variant="outlined"
         />
-        <Button
-          variant="text"
-          sx={{ borderRadius: "10 px", width: "50%" }}
-          onClick={createNewTask}
-        >
+        <Button variant="text" sx={Styles.button} onClick={createNewTask}>
           Add
         </Button>
       </DialogContent>
@@ -50,4 +45,4 @@ function CreateTaskDialog({ isOpen, closeDialog, createTask }: Props) {
   );
 }
 
-export default CreateTaskDialog;
+export default AddTaskDialog;

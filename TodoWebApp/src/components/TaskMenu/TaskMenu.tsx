@@ -3,7 +3,6 @@ import {
   ListItemText,
   MenuItem,
   Menu,
-  Typography,
 } from "@mui/material";
 import { ContentCopy, Delete } from "@mui/icons-material";
 

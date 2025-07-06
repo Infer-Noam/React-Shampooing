@@ -1,6 +1,7 @@
 import Grid from "@mui/material/Grid";
 import type { Task } from "../TaskItem/TaskType";
 import TaskItem from "../TaskItem/TaskItem";
+import Styles from "./TaskGrid.style"
 
 type Props = {
   tasks: Task[];
@@ -19,14 +20,12 @@ function TaskGrid({ tasks, toggleTaskCompletion, openTaskMenu }: Props) {
       container
       rowSpacing={2.5}
       columnSpacing={3.5}
-      sx={{
-        justifyContent: "center",
-      }}
+      sx={Styles.gridContainer}
     >
       {tasks.map((t) => {
         return (
           <Grid
-            size={{ xs: 1, md: 5 }}
+            size={Styles.gridItem}
             key={t.id}
             onContextMenu={(e) => handleRightClick(e, t)}
           >

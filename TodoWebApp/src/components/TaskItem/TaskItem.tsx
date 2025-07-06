@@ -1,5 +1,6 @@
 import type { Task } from "./TaskType";
 import { Typography, Paper, Checkbox, Box } from "@mui/material";
+import Styles from "./TaskItem.style"
 
 type Props = {
   task: Task;
@@ -11,13 +12,10 @@ function TaskItem({ task, toggleTaskCompletion }: Props) {
     <Paper
       variant="outlined"
       elevation={22}
-      sx={{ p: 1, borderRadius: "16px", display: "flex", flexDirection: "row" }}
+      sx={Styles.paper}
     >
       <Typography
-        sx={{
-          display: "flex",
-          alignItems: "center",
-        }}
+        sx={Styles.typography}
         variant="h6"
       >
         {task.name}
